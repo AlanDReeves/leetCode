@@ -13,6 +13,7 @@ public:
     }
 
     int countForGiven(int n, vector<int>& memos) {
+        int original = n;
         if (memos[n] != -1) return memos[n];
 
         int ones = 0;
@@ -20,7 +21,7 @@ public:
             if (n % 2) ones++;
             n /= 2;
         }
-        memos[n] = ones;
+        memos[original] = ones;
         return ones;
     }
 };
